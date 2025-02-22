@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/startBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:text="Start" />
+
+
+        <Button
+            android:id="@+id/settingsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="16dp"
+            android:text="Settings"
+            app:layout_constraintHorizontal_bias="0.104"
+            app:layout_constraintLeft_toRightOf="@+id/startBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="16dp">
+
+        <EditText
+            android:id="@+id/campaignName"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="16dp"
+            android:hint="Measurement Campaign Name"
+            android:inputType="text"
+            app:layout_constraintBottom_toBottomOf="@id/topBar"
+            app:layout_constraintBottom_toTopOf="@+id/logText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal">
+
+
+    <Button
+            android:id="@+id/recordEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="130dp"
+            android:layout_marginRight="16dp"
+            android:inputType="text"
+            android:text="Mark Event" />
+
+        <AutoCompleteTextView
+            android:id="@+id/eventDescription"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:layout_marginLeft="16dp"
+            android:hint="Event Description"
+            android:inputType="text"
+            app:layout_constraintBottom_toBottomOf="@id/topBar"
+            app:layout_constraintBottom_toTopOf="@+id/logText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/logScroll"
+            android:layout_width="fill_parent"
+            android:layout_height="480dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="180dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:fadeScrollbars="false"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbars="vertical">
+
+            <TextView
+                android:id="@+id/logText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:text="Measurement log:"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.104"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.213"
+                tools:text="Measurement log:" />
+
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/buildOn"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="680dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Build: " />
+
+
+        <!-- Other views can be added above this TextView if needed -->
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="391dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
